@@ -1,5 +1,4 @@
-# Beagle
-> A library to support nested routers.
+[![Logo](http://i1176.photobucket.com/albums/x331/photo-ryansmith/beagle_zps958f9ae8.png)](/)
 
 [![Build Status](https://travis-ci.org/ht2/beagle.svg?branch=master)](https://travis-ci.org/ht2/beagle)
 

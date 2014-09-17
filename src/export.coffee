@@ -5,10 +5,10 @@ beagle =
     routes: (() ->
         pathToArray = (path) -> path.split('/')
 
-        copyParams = (params) ->
-            Params = ->
-            Params.prototype = params
-            () -> new Params()
+        clone = (obj) ->
+            Clone = ->
+            Clone.prototype = obj
+            () -> new Clone()
 
         addModifiedParam = (params, route, path, modifiers) ->
             key = route.slice(1)
@@ -31,19 +31,19 @@ beagle =
                 else if not ((routePart is '*') or (routePart is pathPart)) then match = false
             )
 
-            match and (routeParts.length is pathArray.length or isWildcard(routeParts))
-
-
-        newPath = (path, route) -> path.slice(route.length - !!(isWildcard(route)))
+            match = match and (routeParts.length is pathArray.length or isWildcard(routeParts))
+            pathArray.splice(0, routeParts.length - !!isWildcard(routeParts))
+            match
 
         (routes = {}, modifiers = {}) -> (params = {}, path = '') ->
             pathArray = pathToArray(path)
-            params = copyParams(params)
+            params = clone(params)
 
             for route, callback of routes
                 newParams = params()
-                if matchRoute(route, pathArray, newParams, modifiers)
-                    callback(newParams, newPath(path, route))
+                newPath = pathArray.concat()
+                if matchRoute(route, newPath, newParams, modifiers)
+                    callback(newParams, newPath.join('/'))
     )()
 
 # AMD Support.

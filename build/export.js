@@ -12,16 +12,16 @@
       })();
     },
     routes: (function() {
-      var addModifiedParam, copyParams, isWildcard, matchRoute, newPath, pathToArray;
+      var addModifiedParam, clone, isWildcard, matchRoute, pathToArray;
       pathToArray = function(path) {
         return path.split('/');
       };
-      copyParams = function(params) {
-        var Params;
-        Params = function() {};
-        Params.prototype = params;
+      clone = function(obj) {
+        var Clone;
+        Clone = function() {};
+        Clone.prototype = obj;
         return function() {
-          return new Params();
+          return new Clone();
         };
       };
       addModifiedParam = function(params, route, path, modifiers) {
@@ -51,10 +51,9 @@
             return match = false;
           }
         });
-        return match && (routeParts.length === pathArray.length || isWildcard(routeParts));
-      };
-      newPath = function(path, route) {
-        return path.slice(route.length - !!(isWildcard(route)));
+        match = match && (routeParts.length === pathArray.length || isWildcard(routeParts));
+        pathArray.splice(0, routeParts.length - !!isWildcard(routeParts));
+        return match;
       };
       return function(routes, modifiers) {
         if (routes == null) {
@@ -64,7 +63,7 @@
           modifiers = {};
         }
         return function(params, path) {
-          var callback, newParams, pathArray, route, _results;
+          var callback, newParams, newPath, pathArray, route, _results;
           if (params == null) {
             params = {};
           }
@@ -72,13 +71,14 @@
             path = '';
           }
           pathArray = pathToArray(path);
-          params = copyParams(params);
+          params = clone(params);
           _results = [];
           for (route in routes) {
             callback = routes[route];
             newParams = params();
-            if (matchRoute(route, pathArray, newParams, modifiers)) {
-              _results.push(callback(newParams, newPath(path, route)));
+            newPath = pathArray.concat();
+            if (matchRoute(route, newPath, newParams, modifiers)) {
+              _results.push(callback(newParams, newPath.join('/')));
             } else {
               _results.push(void 0);
             }

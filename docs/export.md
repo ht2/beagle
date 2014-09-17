@@ -33,6 +33,8 @@ myRoutes = beagle.routes({
 
 ## Walk
 ```coffee
+# When hash changes myRoutes will be looked through.
+# The given object below (second argument) will be the default params.
 beagle.walk(myRoutes, {
     'joe': 'bloggs'
 })

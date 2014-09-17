@@ -1,7 +1,7 @@
 # Beagle
 > A library to support nested routers.
 
-[![Build Status](https://travis-ci.org/ryansmith94/beagle.svg)](https://travis-ci.org/ryansmith94/beagle)
+[![Build Status](https://travis-ci.org/ht2/beagle.svg)](https://travis-ci.org/ht2/beagle)
 
 ## Users
 Documentation can be found in the [docs](/docs) directory. You should use [Bower](http://bower.io/) to install this for the Browser using `bower install beagle` and then use [requirejs](http://requirejs.org/) to require `bower_components/beagle/build/export`.

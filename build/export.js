@@ -2,12 +2,13 @@
   var beagle;
 
   beagle = {
-    walk: function(callback, params) {
+    walk: function(callback, params, scope) {
       if (params == null) {
         params = {};
       }
-      return (window.onhashchange = function() {
-        return callback(params, location.hash.slice(1));
+      scope = scope || window;
+      return (scope.onhashchange = function() {
+        return callback(params, scope.location.hash.slice(1));
       })();
     },
     routes: (function() {

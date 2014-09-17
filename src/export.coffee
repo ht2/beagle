@@ -1,6 +1,7 @@
 beagle =
-    walk: (callback, params = {}) ->
-        (window.onhashchange = () -> callback(params, location.hash.slice(1)))()
+    walk: (callback, params = {}, scope) ->
+        scope = scope or window
+        (scope.onhashchange = () -> callback(params, scope.location.hash.slice(1)))()
     routes: (() ->
         pathToArray = (path) -> path.split('/')
 

@@ -1,7 +1,7 @@
-[![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/ht2/beagle?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 [![Logo](http://i1176.photobucket.com/albums/x331/photo-ryansmith/beagle_zps958f9ae8.png)](/)
 
 [![Build Status](https://travis-ci.org/ht2/beagle.svg?branch=master)](https://travis-ci.org/ht2/beagle)
+[![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/ht2/beagle?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
 ## Users
 Documentation can be found in the [docs](/docs) directory. You should use [Bower](http://bower.io/) to install this for the Browser using `bower install beagle` and then use [requirejs](http://requirejs.org/) to require `bower_components/beagle/build/export`.

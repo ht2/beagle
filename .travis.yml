@@ -1,2 +1,9 @@
 language: node_js
 node_js: "0.11"
+notifications:
+  webhooks:
+    urls:
+      - "https://webhooks.gitter.im/e/206fa3e5b8ab0ab27e03"
+    on_success: change
+    on_failure: change
+    on_start: false

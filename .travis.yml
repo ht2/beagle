@@ -3,6 +3,6 @@ node_js: "0.11"
 notifications:
   webhooks:
     urls:
-      - "https://webhooks.gitter.im/e/2e772f49630cfc942b03"
+      - https://webhooks.gitter.im/e/1e4df358c14a13c31854
     on_success: change
     on_failure: change

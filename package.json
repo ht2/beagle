@@ -35,7 +35,8 @@
     "gulp": "^3.8.7",
     "gulp-coffee": "^2.2.0",
     "gulp-coffeelint": "^0.3.4",
-    "gulp-jasmine": "^1.0.0"
+    "gulp-jasmine": "^1.0.0",
+    "gulp-sourcemaps": "^1.2.1"
   },
   "dependencies": {
     "amdefine": "^0.1.0"

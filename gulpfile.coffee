@@ -18,9 +18,12 @@ gulp.task('lint', () ->
 
 # Compiling.
 coffee = require('gulp-coffee')
+sourcemaps = require('gulp-sourcemaps')
 gulp.task('compile', () ->
     gulp.src('src/**/*.coffee')
+        .pipe(sourcemaps.init())
         .pipe(coffee())
+        .pipe(sourcemaps.write('maps'))
         .pipe(gulp.dest('build'))
 )
 

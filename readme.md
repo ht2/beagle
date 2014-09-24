@@ -1,7 +1,8 @@
 [![Logo](http://i1176.photobucket.com/albums/x331/photo-ryansmith/beagle_zps958f9ae8.png)](/)
 
 [![Build Status](https://travis-ci.org/ht2/beagle.svg?branch=master)](https://travis-ci.org/ht2/beagle)
-[![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/ht2/beagle?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+[![Dependencies](https://david-dm.org/ht2/beagle.png)]()
+[![Chat](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/ht2/beagle?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
 If you have a bug, enhancement, or question you can post it in the issues, however, please see the [guidelines](/contributing.md) before doing so. You may also ask questions and chat on [Gitter](https://gitter.im/ryansmith94/couple).
 

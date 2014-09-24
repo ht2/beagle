@@ -13,7 +13,7 @@ beagle =
         addModifiedParam = (params, route, path, modifiers) ->
             key = route.slice(1)
             modifier = modifiers[key] or (value) -> value
-            params[key] = modifier(path)
+            params[key] = modifier(path, params)
 
         isWildcard = (arr = []) -> arr[arr.length - 1] is '*'
 

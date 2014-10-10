@@ -30,7 +30,7 @@
         modifier = modifiers[key] || function(value) {
           return value;
         };
-        return params[key] = modifier(path);
+        return params[key] = modifier(path, params);
       };
       isWildcard = function(arr) {
         if (arr == null) {
@@ -96,3 +96,5 @@
   }
 
 }).call(this);
+
+//# sourceMappingURL=maps/export.js.map

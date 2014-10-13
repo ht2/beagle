@@ -27,4 +27,4 @@ gulp.task('compile', () ->
         .pipe(gulp.dest('build'))
 )
 
-gulp.task('default', ['lint', 'test', 'compile'])
+gulp.task('default', ['lint', 'test'])
